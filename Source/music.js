@@ -15,7 +15,7 @@ angular.module('musicApp', [])
 
             youTubeLink.success(function (data) {
                    angular.forEach(data.items, function(item){
-                      item.id
+                      
 
 
                     if (item.id.videoId != undefined){

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="musicApp" class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Music </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" type="application/javascript"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="music.css">
+</head>
+
+<body class="body">
+
+<div ng-controller="musicCtrl" class="container">
+    <div class="row">
+        <div class="menu" id="search">
+            <h1 >Song Search</h1>
+            <input type="text" id="songSearch" placeholder="Enter the song"/>
+            <button id="btn_getReview" ng-click="getSong()">Submit</button>
+        </div>
+    </div>
+
+    <div class="row" style="border: 20px;">
+           <div id="youTubeLinks" class="col-md-4">
+               <strong>The list of Videos from Youtube API: </strong>
+               <div id="list" ng-repeat="list in youtubeList">
+                   <!--<a href="" ng-click="getReviews(venue)" style="font-size: x-large; color: #5e5e5e; text-align: center;">{{venue.name}}</a>-->
+                   </p> Video {{$index+1}} </p>
+                   <iframe  src="{{ list }}"></iframe>
+               </div>
+
+           </div>
+            <div id="freesoundLinks" class="col-md-4">
+                <strong>The list of Sounds from FreeSound API: </strong>
+                <div id="links" ng-repeat="sound in freesoundList">
+                    <!--<a href="" ng-click="getReviews(venue)" style="font-size: x-large; color: #5e5e5e; text-align: center;">{{venue.name}}</a>-->
+                    </p> Sound {{$index+1}} </p>
+
+                    <iframe  src="{{ sound }}"></iframe>
+                </div>
+
+            </div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+<script src="music.js"></script>
+
+</body>
+
+</html>
